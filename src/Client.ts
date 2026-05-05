@@ -10,7 +10,7 @@ export interface ClientOptions {
 }
 
 interface CacheEntry {
-  data: any;
+  data: unknown;
   expiresAt: number;
 }
 
@@ -25,10 +25,10 @@ export class Client {
     try {
       if (typeof process !== 'undefined' && process.env && process.env.DIVISAS_API_KEY) {
         defaultApiKey = process.env.DIVISAS_API_KEY;
-      } else if (typeof (globalThis as any) !== 'undefined' && (globalThis as any).Deno) {
-        defaultApiKey = (globalThis as any).Deno.env.get('DIVISAS_API_KEY');
+      } else if (typeof globalThis !== 'undefined' && 'Deno' in globalThis) {
+        defaultApiKey = (globalThis as unknown as { Deno: { env: { get: (k: string) => string } } }).Deno.env.get('DIVISAS_API_KEY');
       }
-    } catch (e) {
+    } catch {
       // Ignore strict bundler errors
     }
 
