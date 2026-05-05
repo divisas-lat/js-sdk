@@ -4,10 +4,10 @@ El SDK oficial de Node.js y TypeScript para interactuar con la API de [Divisas.l
 
 ## Características
 
-- 🔒 **Tipado Fuerte**: Construido con TypeScript para un autocompletado perfecto.
-- 🌐 **Isomorfo**: Utiliza `fetch` nativamente. Cero dependencias adicionales como Axios.
-- ⚡️ **Caché en Memoria**: Para evitar consumir tu cuota de API, cuenta con un caché simple configurable.
-- ⛓️ **API Fluida**: Syntax limpia `divisas.query().forCountry('GT').getToday()`.
+- **Tipado Fuerte**: Construido con TypeScript para un autocompletado perfecto.
+- **Isomorfo**: Utiliza `fetch` nativamente. Cero dependencias adicionales como Axios.
+- **Caché en Memoria**: Para evitar consumir tu cuota de API, cuenta con un caché simple configurable.
+- **API Fluida**: Syntax limpia `divisas.query().forCountry('GT').getToday()`.
 
 ## Instalación
 
